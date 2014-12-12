@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerControllerScript : MonoBehaviour {
 	Animator controller;
 	int[] stateHashes = new int[3];
+	float yRotation;
 	
 	void Start()
 	{
@@ -11,6 +12,7 @@ public class PlayerControllerScript : MonoBehaviour {
 		stateHashes[0] = Animator.StringToHash("walk");
 		stateHashes[1] = Animator.StringToHash("run");
 		stateHashes[2] = Animator.StringToHash("jump");
+		yRotation = 0f;
 	}
 	
 	// Update is called once per frame
@@ -43,14 +45,35 @@ public class PlayerControllerScript : MonoBehaviour {
 			
 			//StartCoroutine(UncheckStateFlag(2));
 		}
-		
-		/*if (Input.GetKeyUp(KeyCode.Space))
-		{
-			controller.SetBool(stateHashes[2], false);
-		}*/
+
 		if (Input.GetKeyUp(KeyCode.Space))
 		{
 			controller.SetBool(stateHashes[2], false);
+		}
+
+		if (Input.GetKeyDown (KeyCode.A)) 
+		{
+			//transform.rotation = new Vector3(0, -90f, 0);
+		}
+
+		if (Input.GetKeyDown (KeyCode.D)) 
+		{
+			if(yRotation > 360f && yRotation < -360)
+			{
+				yRotation = 0f;
+			}
+			yRotation += 90f;
+			transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
+		}
+
+		if (Input.GetKeyDown (KeyCode.A)) 
+		{
+			if(yRotation > 360f && yRotation < -360)
+			{
+				yRotation = 0f;
+			}
+			yRotation -= 90f;
+			transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
 		}
 	}
 	
