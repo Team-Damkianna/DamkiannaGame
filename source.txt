@@ -1,0 +1,10 @@
+zombie :http://tf3dm.com/download-page.php?url=phycho-zombie-cop-rigged-for-animation-64455
+
+mainCharecter : http://tf3dm.com/3d-model/super-boy-72494.html
+
+animations :
+https://www.assetstore.unity3d.com/en/#!/content/19991
+
+3d models:
+https://www.assetstore.unity3d.com/en/#!/content/19738
+https://www.assetstore.unity3d.com/en/#!/content/21242
